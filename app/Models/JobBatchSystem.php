@@ -1,0 +1,25 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+class JobBatchSystem extends Model
+{
+    /**
+     * The table associated with the model.
+     */
+    protected $table = 'sys_job_batches';
+    public $timestamps = true;
+    protected $fillable = [
+        'id',
+        'name',
+        'total_jobs',
+        'pending_jobs',
+        'failed_jobs',
+        'failed_job_ids',
+        'options',
+        'cancelled_at',
+    ];
+
+}

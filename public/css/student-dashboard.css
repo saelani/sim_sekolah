@@ -1,0 +1,540 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    color: var(--portal-text, #1e293b);
+    background: var(--portal-bg, #f8f7f4);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ================= NAVBAR SISWA ================= */
+.student-navbar {
+    background: #ffffff;
+    border-bottom: 1px solid var(--portal-border, #e6e2d8);
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    box-shadow: 0 2px 10px rgba(26, 58, 92, 0.04);
+}
+
+.student-navbar-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.student-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.student-brand-logo {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--portal-gold, #c59b27);
+    background: #ffffff;
+}
+
+.student-brand-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, var(--portal-navy, #1a3a5c), var(--portal-navy-light, #2c5f8a));
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.student-brand-name {
+    font-size: 1.02rem;
+    font-weight: 800;
+    color: var(--portal-navy, #1a3a5c);
+    line-height: 1.2;
+}
+
+.student-brand-tag {
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: #9e7816;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.student-nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-student-logout {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 15px;
+    border-radius: 10px;
+    border: 1.5px solid #fecaca;
+    background: #fef2f2;
+    color: #b91c1c;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.18s ease;
+    font-family: inherit;
+}
+
+.btn-student-logout:hover {
+    background: #dc2626;
+    border-color: #dc2626;
+    color: #ffffff;
+}
+
+/* ================= PROFIL & RINGKASAN SISWA ================= */
+.dash-profile-card {
+    padding: 22px 26px;
+    flex-direction: row;
+    align-items: center;
+    gap: 22px;
+    border-left: 5px solid var(--portal-gold, #c59b27);
+    margin-bottom: 24px;
+}
+
+.dash-avatar-ring {
+    width: 86px;
+    height: 86px;
+    border-radius: 50%;
+    padding: 3px;
+    background: linear-gradient(135deg, var(--portal-gold, #c59b27), var(--portal-gold-soft, #f8e5a8), var(--portal-navy-light, #2c5f8a));
+    box-shadow: 0 6px 18px rgba(26, 58, 92, 0.14);
+    flex-shrink: 0;
+}
+
+.dash-avatar-ring img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #ffffff;
+}
+
+.dash-avatar-fallback {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--portal-navy, #1a3a5c), var(--portal-navy-light, #2c5f8a));
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dash-student-name {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--portal-navy, #1a3a5c);
+    margin: 0 0 8px;
+    line-height: 1.25;
+}
+
+.dash-meta-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.dash-meta-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 12px;
+    border-radius: 999px;
+    background: #f1f5f9;
+    color: #334155;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.dash-meta-pill strong {
+    color: var(--portal-navy, #1a3a5c);
+}
+
+/* Kartu Statistik Ringkas */
+.dash-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+.dash-summary-card {
+    padding: 16px 18px;
+    flex-direction: row;
+    align-items: center;
+    gap: 14px;
+}
+
+.dash-summary-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 11px;
+    background: rgba(26, 58, 92, 0.07);
+    color: var(--portal-navy, #1a3a5c);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.dash-summary-icon.gold {
+    background: rgba(197, 155, 39, 0.15);
+    color: #9e7816;
+}
+
+.dash-summary-val {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--portal-navy, #1a3a5c);
+    line-height: 1.2;
+}
+
+.dash-summary-lbl {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--portal-muted, #64748b);
+    margin-top: 2px;
+}
+
+/* ================= TAB NAVIGASI ================= */
+.dash-tab-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    background: #ffffff;
+    border: 1px solid var(--portal-border, #e6e2d8);
+    border-radius: 14px;
+    padding: 8px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 14px rgba(26, 58, 92, 0.04);
+}
+
+.dash-tab-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 10px;
+    background: transparent;
+    color: var(--portal-muted, #64748b);
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.18s ease;
+    font-family: inherit;
+}
+
+.dash-tab-btn:hover {
+    background: #f1f5f9;
+    color: var(--portal-navy, #1a3a5c);
+}
+
+.dash-tab-btn.active {
+    background: linear-gradient(135deg, var(--portal-navy, #1a3a5c) 0%, #265380 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(26, 58, 92, 0.2);
+}
+
+.dash-tab-count {
+    padding: 1px 8px;
+    border-radius: 999px;
+    font-size: 0.73rem;
+    font-weight: 700;
+    background: rgba(26, 58, 92, 0.1);
+    color: var(--portal-navy, #1a3a5c);
+}
+
+.dash-tab-btn.active .dash-tab-count {
+    background: rgba(255, 255, 255, 0.22);
+    color: #ffffff;
+}
+
+.tab-content > .tab-pane {
+    display: none;
+}
+
+.tab-content > .tab-pane.active {
+    display: block;
+}
+
+/* ================= PANEL UMUM TIAP TAB ================= */
+.dash-panel-head {
+    padding: 18px 24px;
+    background: #fcfbf9;
+    border-bottom: 1px solid var(--portal-border, #e6e2d8);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.dash-panel-head h2 {
+    margin: 0;
+    font-size: 1.12rem;
+    font-weight: 800;
+    color: var(--portal-navy, #1a3a5c);
+}
+
+.dash-panel-meta {
+    font-size: 0.82rem;
+    color: var(--portal-muted, #64748b);
+}
+
+.dash-panel-body {
+    padding: 22px 24px;
+}
+
+/* ================= TAB 1: TABUNGAN ================= */
+.savings-highlight {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 18px 22px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, var(--portal-navy-dark, #132c47) 0%, var(--portal-navy-light, #2c5f8a) 100%);
+    color: #ffffff;
+    margin-bottom: 20px;
+    border-left: 5px solid var(--portal-gold, #c59b27);
+}
+
+.savings-highlight-label {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 600;
+}
+
+.savings-highlight-amount {
+    font-size: 1.55rem;
+    font-weight: 800;
+    color: var(--portal-gold-soft, #f8e5a8);
+    font-variant-numeric: tabular-nums;
+}
+
+.dash-list-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 13px 0;
+    border-bottom: 1px solid #f1efe9;
+}
+
+.dash-list-row:last-child {
+    border-bottom: none;
+}
+
+.dash-list-date {
+    font-size: 0.88rem;
+    color: var(--portal-muted, #64748b);
+    font-weight: 500;
+}
+
+.dash-list-amount {
+    font-weight: 700;
+    color: var(--portal-navy, #1a3a5c);
+    font-size: 0.94rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.dash-type-tag {
+    padding: 2px 10px;
+    border-radius: 999px;
+    background: #f1f5f9;
+    color: #475569;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+/* ================= TAB 2 & 3: KEHADIRAN & JADWAL ================= */
+.dash-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.dash-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 560px;
+}
+
+.dash-table th,
+.dash-table td {
+    padding: 12px 14px;
+    text-align: left;
+    border-bottom: 1px solid #f1efe9;
+    font-size: 0.9rem;
+}
+
+.dash-table th {
+    background: #f8f7f4;
+    color: var(--portal-navy, #1a3a5c);
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    border-bottom: 1px solid var(--portal-border, #e6e2d8);
+}
+
+.dash-table tbody tr:hover {
+    background: #fcfbf9;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 3px 11px;
+    border-radius: 999px;
+    font-size: 0.76rem;
+    font-weight: 700;
+}
+
+.status-hadir { background: #ecfdf5; color: #15803d; }
+.status-sakit { background: #fef2f2; color: #b91c1c; }
+.status-izin  { background: #fffbeb; color: #b45309; }
+.status-alpa  { background: #fef2f2; color: #991b1b; }
+
+/* ================= TAB 4: ULANGAN CBT ================= */
+.dash-exam-card {
+    border-top: 4px solid var(--portal-navy, #1a3a5c);
+}
+
+.dash-exam-subject {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 8px;
+    background: rgba(26, 58, 92, 0.08);
+    color: var(--portal-navy, #1a3a5c);
+    font-size: 0.76rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.dash-exam-title {
+    font-size: 1.08rem;
+    font-weight: 800;
+    color: var(--portal-text, #1e293b);
+    margin: 0 0 12px;
+    line-height: 1.35;
+}
+
+.dash-exam-meta {
+    font-size: 0.84rem;
+    color: var(--portal-muted, #64748b);
+    line-height: 1.6;
+    margin-top: auto;
+    padding-top: 12px;
+    border-top: 1px solid #f1efe9;
+}
+
+/* ================= FOOTER SISWA ================= */
+.student-footer {
+    background: linear-gradient(135deg, #132c47 0%, #1a3a5c 100%);
+    color: rgba(255, 255, 255, 0.86);
+    border-top: 3px solid var(--portal-gold, #c59b27);
+    padding: 28px 20px;
+    text-align: center;
+    font-size: 0.85rem;
+    margin-top: auto;
+}
+
+.student-footer span {
+    color: var(--portal-gold-soft, #f8e5a8);
+    font-weight: 700;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+    .dash-summary-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .dash-profile-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 18px;
+    }
+
+    .dash-meta-pills {
+        justify-content: center;
+    }
+
+    .dash-panel-body {
+        padding: 18px 16px;
+    }
+
+    .dash-tab-btn {
+        flex: 1 1 calc(50% - 8px);
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .dash-summary-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .tab-pane .dash-panel-body {
+        padding: 12px !important;
+    }
+
+    .tab-pane table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .tab-pane .portal-grid,
+    .tab-pane .pengajuan-grid {
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+    }
+
+    .tab-pane .btn-primary-tab,
+    .tab-pane .btn-cancel-tab,
+    .tab-pane .portal-btn-primary {
+        width: 100%;
+        min-height: 42px;
+        justify-content: center;
+    }
+}
